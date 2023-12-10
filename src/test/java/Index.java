@@ -21,6 +21,7 @@ public class Index {
     public void tableTest(){
         //Canada
         WebElement canada = wd.findElement(By.cssSelector("tr:nth-child(3)>td:last-child"));
+        WebElement canada1 = wd.findElement(By.xpath("//td[text()='Canada']"));
         Assert.assertEquals(canada.getText(),"Canada");
     }
 
@@ -72,6 +73,8 @@ public class Index {
         //contains
         WebElement inp3 = wd.findElement(By.cssSelector("[placeholder*='your']"));
     }
+
+    //contains
 
 
 }
