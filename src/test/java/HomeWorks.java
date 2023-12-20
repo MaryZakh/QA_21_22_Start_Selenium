@@ -107,15 +107,15 @@ public class HomeWorks {
 
 
     @Test
-    public void classwork(){
+    public void classwork() {
         //parent
         //WebElement el = wd.findElement(By.xpath("//div/div//input/.."));
-        WebElement el1 =wd.findElement(By.xpath("//h1/parent::*"));
-        WebElement el2 =wd.findElement(By.xpath("//h1/parent::div"));
-        WebElement el3 =wd.findElement(By.xpath("//h1/.."));
+        WebElement el1 = wd.findElement(By.xpath("//h1/parent::*"));
+        WebElement el2 = wd.findElement(By.xpath("//h1/parent::div"));
+        WebElement el3 = wd.findElement(By.xpath("//h1/.."));
 
         //ancestor
-        WebElement el4=wd.findElement(By.xpath("//h1/ancestor::*"));//all
+        WebElement el4 = wd.findElement(By.xpath("//h1/ancestor::*"));//all
         WebElement el5 = wd.findElement(By.xpath("//h1/ancestor::div"));//two options
         WebElement el6 = wd.findElement(By.xpath("//h1/ancestor::div[2]"));//one options
 
@@ -133,6 +133,27 @@ public class HomeWorks {
 
 
     }
+
+
+    @Test
+    public void innerText() {
+        WebElement element = wd.findElement(By.cssSelector("[name='login']"));
+        String text = element.getText(); //get from innerText
+        System.out.println(text);
+
+        WebElement form = wd.findElement(By.xpath("//form"));
+        String textForm = form.getText();
+
+        System.out.println("*********************");
+        System.out.println(textForm);
+
+        WebElement html = wd.findElement(By.tagName("html"));
+        String textAll = html.getText();
+        System.out.println("*********************");
+        System.out.println(textAll);
+
+    }
+
 
     @AfterClass
     public void close() {
